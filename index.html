@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap" rel="stylesheet">
+    <title>cau</title>
+    <style>
+
+        @font-face {
+        
+            font-family: SegoeUI;
+            src:
+            local("Segoe UI Light"),
+            url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff2) format("woff2"),
+            url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff) format("woff"),
+            url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.ttf) format("truetype");
+            font-weight: 100;
+
+        }
+
+        @font-face {
+            font-family: SegoeUI;
+            src:
+                local("Segoe UI Semilight"),
+                url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff2) format("woff2"),
+                url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff) format("woff"),
+                url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.ttf) format("truetype");
+            font-weight: 200;
+        }
+
+        @font-face {
+            font-family: SegoeUI;
+            src:
+                local("Segoe UI"),
+                url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff2) format("woff2"),
+                url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff) format("woff"),
+                url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.ttf) format("truetype");
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: SegoeUI;
+            src:
+                local("Segoe UI Bold"),
+                url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff2) format("woff2"),
+                url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff) format("woff"),
+                url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.ttf) format("truetype");
+            font-weight: 600;
+        }
+
+        @font-face {
+            font-family: SegoeUI;
+            src:
+                local("Segoe UI Semibold"),
+                url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff2) format("woff2"),
+                url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff) format("woff"),
+                url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.ttf) format("truetype");
+            font-weight: 700;
+        }
+
+        :root {
+
+            --generic-text-white: rgba(255, 255, 255, 0.9);
+            --generic-border-white: rgba(255, 255, 255, 0.8);
+            --generic-block-1-background-color: rgba(12, 12, 12, 1);
+            --osu-accent: #b03c6c;
+            --lastfm-accent: red;
+            --steam-accent: rgba(7, 7, 50, 1);
+            --font-1: "Open Sans";
+            --font-2: "Roboto Flex";
+            --font-3: "Archivo";
+            --font-4: "SegoeUI";
+            --font-5: "Libertinus Mono";
+
+        }
+
+        ::selection {
+
+            background: rgba(127, 127, 127, 0.3);
+
+        }
+
+        html {
+            
+            background-color: black;
+            height: 100%;
+
+        }
+
+        body {
+
+            background: url("./IMG_20250607_215859_536.jpg");
+            background-size: cover;
+            background-position-x: 30%;
+            min-height: 100%;
+            height: fit-content;
+
+        }
+
+        html, body {
+
+            font-family: var(--font-1); 
+            margin: 0;
+
+        }
+
+        div#container-1 {
+
+            display: flex;
+            flex-direction: row;
+
+            width: fit-content;
+            height: fit-content;
+            min-height: 80%;
+            max-width: 100%;
+
+            justify-content: center;
+
+        }
+
+        div.generic-block {
+
+            margin: 2rem;
+            margin-top: 4rem;
+
+        }
+        
+        .horizontal-center {
+
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+
+        }
+
+        div#container-1-block-1 {
+
+            padding: 0.8rem;
+            display: block;
+            height: 100%;
+            width: 32rem;
+
+            background-image: url("./Koi-Pond.jpg");
+            background-blend-mode:soft-light;
+            background-size: contain;
+            background-color: var(--generic-block-1-background-color);
+
+            color: var(--generic-text-white);
+            
+        }
+
+        div#container-1-block-2 {
+
+            display: flex;
+            flex-direction: column;
+            color: white;
+            justify-content: space-around;
+
+            height: fit-content;
+            width: 20rem;
+
+        }
+
+        div.c-1-b-2-half {
+
+            width: fit-content;
+            margin-bottom: 0.7rem;
+            min-width: 16rem;
+
+        }
+
+        div#c-1-b-2-random-shit {
+
+            outline: 0.2rem solid black;
+            font-family: var(--font-2);
+            font-size: 1.1rem;
+            background-image: url("./HD-wallpaper-blue-fire-background-macro-fire-textures-blue-fire-flames-fire-background-with-fire-fire-flames.jpg");
+            background-size: contain;
+            background-blend-mode:multiply;
+            padding: 0.4rem;
+            margin-top: 0.9rem;
+
+        }
+
+        h1, h2, h3, b, i, em, p {
+
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin: 0;
+
+        }
+
+        @keyframes cau {
+            
+            0% { color: rgba(255, 255, 255, 0.7); }
+            50% { color: rgba(255, 255, 255, 1); }
+            100% { color: rgba(255, 255, 255, 0.7); }
+
+        }
+
+        @keyframes kan {
+            
+            0% { color: rgba(0, 244, 255, 0.95); }
+            50% { color: rgba(0, 195, 255, 1); }
+            100% { color: rgba(0, 244, 255, 0.95); }
+
+        }
+
+        h1#caukan {
+
+            font-family: var(--font-3);
+            font-size: 2.5rem;
+            animation: cau 0.4s ease-in-out 0s infinite;
+
+        }
+
+        span#fishi {
+
+            animation: kan 0.4s ease-in-out 0s infinite;
+
+        }
+
+        a {
+
+            color: white;
+
+        }
+
+        a:hover {
+
+            color: rgba(211, 211, 255, 1);
+
+        }
+
+        a:active {
+
+            color: rgba(49, 49, 255, 1);
+
+        }
+
+        ul {
+
+            padding-left: 2rem;
+
+        }
+
+        a#osu-href {
+
+            color: var(--osu-accent);
+            background-color: rgba(255, 255, 255, 0.1);
+
+        }
+        
+        a#osu-href:active {
+
+            background-color: var(--osu-accent);
+            color: white;
+
+
+        }
+
+        a#lastfm-href {
+
+            background-color: var(--lastfm-accent);
+            color: white;
+
+        }
+        
+        a#lastfm-href:active {
+
+            color: var(--lastfm-accent);
+            background-color: rgba(255, 255, 255, 0.1);
+
+
+        }
+
+        a#steam-href {
+
+            background-color: var(--steam-accent);
+            color: white;
+
+        }
+        
+        a#steam-href:active {
+
+            color: var(--steam-accent);
+            background-color: rgba(255, 255, 255, 0.1);
+
+        }
+
+        button.some-btn {
+
+            width: fit-content;
+            padding: 0.5rem;
+            border: none;
+            outline: 0.1rem solid white;
+            color: white;
+            font-size: 1.2rem;
+            font-family: var(--font-1);
+            background-color: rgba(0, 0, 0, 0.8);
+
+        }
+
+        button.some-btn:hover {
+
+            text-decoration: underline;
+
+        }
+
+        button.op-btn {
+
+            width: fit-content;
+            border: none;
+            outline: none;
+            background: none;
+            font-family: var(--font-3); 
+            color: black;
+            font-size: 1rem;
+            border: 0.1rem solid rgba(0, 0, 0, 0.5);
+        }
+
+        button.op-btn:hover {
+
+            text-decoration: underline;
+
+        }
+
+        input.op-num-field {
+
+            width: fit-content;
+            border: none;
+            outline: none;
+            background-color: var(--generic-block-1-background-color);
+            font-family: var(--font-3);
+            color: var(--generic-text-white);
+            font-size: 1rem;
+            border: 0.1rem solid rgba(0, 0, 0, 0.5);
+        }
+
+        input.op-num-field:hover {
+
+            text-decoration: underline;
+
+        }
+
+        div#options {
+
+            font-family: var(--font-3);
+            display: none;
+            background-color: var(--generic-border-white);
+            padding: 1rem;
+            margin-top: 2rem;
+            z-index: 400;
+            border: 0.2rem solid white;
+
+        }
+
+        button#ets2-aka-soggy {
+
+            background: url("https://cau2ryby.nekoweb.org/i%20think%20youre%20better%20off%20getting%20the%20full%20soggy%20cat%20drive%20at%20drive3.soggy.cat%20(8).jpg");
+            background-blend-mode: overlay;
+            background-position-y: 25%;
+            background-size: cover;
+
+        }
+
+        div#c1-bdatentime {
+
+            display: block;
+            width: 100%;
+            text-align: center;
+            width: 12rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 0.4rem;
+            margin-top: 0.9rem;
+            font-family: var(--font-5);
+            color: rgba(255, 233, 233, 0.95)
+
+        }
+
+        #c-1-b-2-time-day {
+            opacity: 0.7;
+        }
+
+        div#c-1-b-2-weather {
+
+            margin-top: 0.9rem;
+            min-width: 60%;
+            width:fit-content;
+            max-width: 100%;
+            padding: 0.8rem;
+            text-align: right;
+            background-image: url("./images.jpg");
+            background-size: contain;
+            background-color: rgba(188, 188, 188, 0.9);
+            background-blend-mode:multiply;
+            font-family: var(--font-4);
+
+        }
+
+        img#osu-pfp-hello {
+
+            position: absolute;
+            top: 4.35rem;
+            left: 31.2rem;
+
+            width: 4rem;
+            height: 4rem;
+
+        }
+
+        [class="bottom-half-of-c-1-b-2-random-shit"] {
+
+            background-color: rgba(0, 0, 0, 0.6);
+
+        }
+
+        [class="c-1-b-2-weather-text-el"] {
+
+            font-weight: 200;
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="container-1" class="horizontal-center">
+
+        <div id="container-1-block-1" class="generic-block">
+
+            <img src="https://a.ppy.sh/12974047" id="osu-pfp-hello" title="my osu pfp">
+            <h1 id="caukan"><span id="alia">cauvas</span> <span id="fishi">><></span></h1>
+            <ul style="list-style:square;">
+            	<li>aka Cau2Ryby</li>
+                <li>im <span id="thing-age"></span> years old</li>
+                <li>he/him - RU&EN OK</li>
+                <li>i map and play <i>(std + taiko)</i> -> <a href="https://osu.ppy.sh/users/12974047" noreferrer target="_blank" id="osu-href">osu! profile</a></li>
+                <li><a href="https://last.fm/user/cau2ryby" noreferrer target="_blank" id="lastfm-href">last.fm</a> : <a href="https://drive.google.com/drive/folders/1TNuZDzIdEquo8kuAziaaTYbcXGgHDdDG?usp=drive_link" noreferrer target="_blank">offline files</a></li>
+                <li>-> <a href="https://steamcommunity.com/id/cauvas/" noreferrer target="_blank" id="steam-href">steam</a> <- im gamemaxxing</li>
+                <li>ceo of [fish]</li>
+                <li>got confused with a girl 12 times<br>hit by a car once</li>
+                <li>wanna go for drawing, making listenable music. surely <em>in the future!</em></li>
+            </ul>
+            <h2>i like aak arknights even though</h2>
+            <p>i have no idea what arknights is about and what he does there</p>
+
+            <img src="good-morning-aak-arknights.gif" style="width: 100%; aspect-ratio: 3;">
+
+            <p style="font-size: 0.7rem; opacity: 0.8; text-align: center;">if you want content created by you gone from this webpage, email me at temme@hrt-yuri.art<br>i scavenge the net mindlessly for stuff and i acknowledge it fully, but it's beautiful</p>
+
+        </div>
+        <div id="container-1-block-2" class="generic-block">
+
+            <div id="c-1-b-1-former-half" class="c-1-b-2-half">
+
+                <button class="some-btn" onclick="do_toggle_menu();" id="opt-sh-btn">show menu</button><h3 id="c3-coin">c$ 4.392</h3>
+
+                <div id="c1-bdatentime">
+                    <h1 id="c-1-b-2-time-clock"></h1>
+                    <p id="c-1-b-2-time-day"></p>
+                </div>
+
+                <div id="c-1-b-2-weather">
+                    <h1 class="c-1-b-2-weather-text-el"><span id="temp-weather">--°C </span><small style="font-size: 1.5rem; opacity: 0.7;" id="feels-like-weather">~ --°C</small></h1>
+                    <h3 id="description-weather" class="c-1-b-2-weather-text-el">moderate rain</h3>
+                </div>
+
+            </div>
+
+            <div id="c-1-b-2-latter-half" class="c-1-b-2-half">
+                
+                <a href="https://hrt-yuri.art" target="_blank" noreferrer><button id="ets2-aka-soggy" class="some-btn">hrt-yuri.art<br><small>(probably <span id="offline-or">offline</span>)</small></button></a>
+                
+                <div id="c-1-b-2-random-shit">
+                    
+                    <p title="i only go for beverages now. fuck all that food man">* i havent bought random harmful shit from groceries for <i><span id="junk-timer"></span></i></p>
+                    <br><p class="bottom-half-of-c-1-b-2-random-shit">* i weigh <span id="t-kg">--</span> <span id="t-kg-change">↑2.22</span><br>bmi: <span id="t-kg-upd-bmi"></span></p><p class="bottom-half-of-c-1-b-2-random-shit"><small>last update <span id="last-update-time-output-by-epoch"></span> ago</small></p>
+
+                </div>
+                
+                <ul style="margin-top: 0.9rem;">
+                    <li><a href="https://twitter.com/cau2ryby" target="_blank" noreferrer>twitter</a></li>
+                    <li><a href="https://ch.tetr.io/u/cau2ryby" target="_blank" noreferrer>tetra channel</a></li>
+                </ul>
+            
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="options" class="horizontal-center">
+        
+        <p>tps: <input type="number" id="tps-val" class="op-num-field"></p>
+        <button id="op-apply" class="op-btn" onclick="do_opt_apply();">apply</button>
+        <button id="op-reload" class="op-btn" onclick="do_reload_page();">reload</button>
+        <button id="op-reset" class="op-btn" onclick="do_reset();">reset</button>
+        <br><br>
+        <h3>gamble w/ c$</h3>
+        <p>bet: <input type="number" id="c_dollar_gamb_bet" class="op-num-field"></p>
+        <button id="op-coinflip" class="op-btn" onclick="do_opt_coinflip();">coinflip</button>
+        <button id="op-upgr-mult" class="op-btn" onclick="do_upgrade_mult();" title="grabs all ur c$ but increases mult somewhat">upgrade c$ mult</button>
+        <button id="op-upgr-mult" class="op-btn" onclick="for(let i = 0; i < 22; i++) do_upgrade_mult();" title="does that 22 times. okay">x22</button><br>
+        <button id="op-upgr-man-cur" class="op-btn" onclick="do_upgrade_cur_management();">enable currency updates every tick (c$1 thous.)</button>
+        <br><br>
+        <p id="resize-info"></p>
+        <br>
+        <p>last update: 27.06.2025</p>
+        <p id="run-result">took --ms</p>
+        <p id="pace-el">pace: --/--tps</p>
+
+    </div>
+
+<script type="text/javascript">
+
+    // something
+
+    let reset_confirmed = false;
+    let time_now = Date.now();
+    let last_tick;
+
+    // elements variables
+
+    let html_tag = document.querySelector("html");
+    let t_kg = document.getElementById("t-kg");
+    let t_kg_change = document.getElementById("t-kg-change");
+    let t_kg_upd_bmi = document.getElementById("t-kg-upd-bmi");
+    let t_kg_last_upd_bmi_epoch = document.getElementById("last-update-time-output-by-epoch");
+    let update_age_el = document.getElementById("thing-age");
+    let junk_timer_el = document.getElementById("junk-timer"); 
+    let local_time_upd_el_clock = document.getElementById("c-1-b-2-time-clock");
+    let local_time_upd_el_day = document.getElementById("c-1-b-2-time-day");
+    let container_1 = document.getElementById("container-1");
+    let container_1_block_2 = document.getElementById("container-1-block-2");
+    let options_el = document.getElementById("options");
+    let opt_aply_btn = document.getElementById("op-apply");
+    let tps_field_el = document.getElementById("tps-val");
+    let tgl_menu_btn = document.getElementById("opt-sh-btn");
+    let run_result = document.getElementById("run-result");
+    let reset_button = document.getElementById("op-reset");
+    let c3_coin = document.getElementById("c3-coin");
+    let bet_input_el = document.getElementById("c_dollar_gamb_bet");
+    let resize_info = document.getElementById("resize-info");
+    let pace_el = document.getElementById("pace-el");
+    let offline_or = document.getElementById("offline-or");
+    let feels_like_weather = document.getElementById("feels-like-weather");
+    let temp_weather = document.getElementById("temp-weather");
+    let description_weather = document.getElementById("description-weather");
+    let c_1_b_2_weather = document.getElementById("c-1-b-2-weather");
+    let alia = document.getElementById("alia");
+
+    // found this the other day
+
+    function Enum(values) {
+
+        for(i = 0; i < values.length; ++i) this[values[i]] = i;
+        return this;
+
+    }
+
+    // stupid constants
+
+    const week_day_array = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+    const title_messages = ['my f key is fucking doubleclicking', 'im a cat', 'i love aak arknights', 'meow', 'draw my fursona', 'ergjn srfuckdsolskzxfbls'];
+    const number_titles = [
+    '', 
+    'thous.', 'milli.', 'billi.', 'trill.', 'quadr.', 'quint.', 'sexti.', 'septi.', 'octol.', 'nonil.', 
+    'decil.', 'undec.', 'duodc.', 'tridc.', 'qttdc.', 'quidc.', 'sexdc.', 'sepdc.', 'octdc.', 'nondc.', 
+    'vignt.', 'unvnt.', 'duvnt.', 'trvnt.', 'qavnt.', 'quvnt.', 'sxvnt.', 'spvnt.', 'ocvnt.', 'novnt.', 
+    'trgnt.', 'untnt.', 'dutnt.', 'trtnt.', 'qatnt.', 'qutnt.', 'sxtnt.', 'sptnt.', 'octnt.', 'notnt.', 
+    'qagnt.', 'unqan.', 'duqan.', 'trqan.', 'qaqan.', 'quqan.', 'sxqan.', 'spqan.', 'ocqan.', 'noqan.', 
+    'qugnt.', 'unqun.', 'duqun.', 'trqun.', 'qaqun.', 'ququn.', 'sxqun.', 'spqun.', 'ocqun.', 'noqun.', 
+    'sxgnt.', 'unsxn.', 'dusxn.', 'trsxn.', 'qasxn.', 'qusxn.', 'sxsxn.', 'spsxn.', 'ocsxn.', 'nosxn.',  
+    'spgnt.', 'unspn.', 'duspn.', 'trspn.', 'qaspn.', 'quspn.', 'sxspn.', 'spspn.', 'ocspn.', 'nospn.', 
+    'ocgnt.', 'unogt.', 'duogt.', 'trogt.', 'qaogt.', 'quogt.', 'sxogt.', 'spogt.', 'ocogt.', 'noogt.', 
+    'nognt.', 'unngt.', 'dungt.', 'trngt.', 'qangt.', 'qungt.', 'sxngt.', 'spngt.', 'ocngt.', 'nongt.', 
+    'centi.'
+    ];
+    const default_values = {
+        "tps": 20,
+        "c_dollar": 0,
+        "bet": 1,
+        "mult": 1,
+        "manage_cur_every_tick": false
+    };
+
+    // style settings
+    // resize arguments
+
+    let text_resize_modes = Enum(["vmax", "vmin", "vh", "vw"]);
+
+    let text_resize_mode = text_resize_modes["vmax"];
+    let text_default_percentage = 1;
+
+    // timestamps for something
+
+    let birth_date_epoch = 1159618500000;
+    let bmi_change_epoch = 1750844516000;
+
+    // per tick functionality variables
+
+    let tps = localStorage.getItem("tps") || default_values["tps"];
+    let c_dollar = parseFloat(localStorage.getItem("c_dollar")) || default_values["c_dollar"];
+    let bet = parseFloat(localStorage.getItem("bet")) || default_values["bet"];
+    let mult = parseFloat(localStorage.getItem("mult")) || default_values["mult"];
+    let manage_cur_every_tick = localStorage.getItem("manage_cur_every_tick") != null ? true : false;
+    
+    // values i'll change over time
+
+    let last_stupid_shop_epoch = 1750786916000;
+
+    let im_fat_fuck = 91.5;
+    let heit = 1.81;
+
+    let bmi = im_fat_fuck != null ? im_fat_fuck / (heit*heit) : null;
+
+    let last_fat_fuck = 93;
+
+    // functions and events - bringing everything together
+
+    function do_canonic_resize() {
+
+        let w_height = window.innerHeight;
+        let w_width = window.innerWidth;
+
+        let column = w_height > w_width;
+        let font_size;
+
+        switch(text_resize_mode) {
+
+            case 0:
+                font_size = w_width > w_height ? text_default_percentage * w_width / 100 : text_default_percentage * w_height / 100;
+                break;
+            case 1:
+                font_size = w_width < w_height ? text_default_percentage * w_width / 100 : text_default_percentage * w_height / 100;
+                break;
+            case 2:
+                font_size = w_height * text_default_percentage / 100;
+                break;
+            case 3:
+                font_size = w_width * text_default_percentage / 100;
+                break;
+
+        }
+
+        if(column) font_size *= 1.3;
+
+        html_tag.style.fontSize = `${font_size}px`;
+
+        // additionally,
+
+        container_1.style.flexDirection = column ? "column" : "row";
+        container_1_block_2.style.width = !column ? "20rem" : "34rem"; 
+        container_1_block_2.style.flexDirection = !column ? "column" : "row";
+        container_1_block_2.style.marginTop = !column ? "4rem" : "1rem";
+
+        resize_info.innerHTML = `font-size: ${font_size}px<br>mode: ${column ? "column" : "row"}<br>window size: ${w_width}x${w_height}`;
+
+    }
+    
+    function do_format_fuckful_time(epoch) {
+
+        let time = {
+
+            ms: epoch%1000,
+            sec: Math.floor(epoch/1000)%60,
+            min: Math.floor(epoch/60000)%60,
+            hr: Math.floor(epoch/3600000)%24,
+            day: Math.floor(epoch/86400000)%30,
+            mnth: Math.floor(epoch/2592000000)%12,
+            year: Math.floor(epoch/31104000000)%100,
+            century: Math.floor(epoch/3110400000000)
+
+        };
+
+        if(epoch == null) return "";
+        return `${time.century >= 1 ? time.century + "cen " : ""}${time.year >= 1 ? time.year + "yr " : ""}${time.mnth >= 1 ? time.mnth + "mnth " : ""}${time.day >= 1 ? time.day + "day " : ""}${time.hr >= 1 ? time.hr + "hr " : ""}${time.min >= 1 ? time.min + "min " : ""}${time.sec >= 1 ? time.sec + "sec " : ""}${time.ms != 0 ? time.ms + "ms" : ""}`.trimEnd(' ');
+
+    }
+
+    function do_cool_format_number(number) {
+
+        let power = Math.abs(number) < 1000 ? 0 : Math.floor(Math.log10(Math.abs(number)) / 3);
+        let negative = number < 0 ? '-' : '';
+        if(power == 0) return Math.round(number * 1000) / 1000;
+        else if(Math.abs(number) < 1e306) return Math.round(number / Math.pow(1000, Math.floor(power)) * 1000) / 1000 + ' ' + number_titles[power];
+        else return negative + 'more than 100 centillion';
+
+    }
+
+    function do_update_age() {
+
+        update_age_el.innerHTML = `${Math.floor((Date.now() - birth_date_epoch) / 31536000000 * 1000) / 1000}`;
+
+    }
+
+    function do_update_garbage_food() {
+
+        junk_timer_el.innerHTML = do_format_fuckful_time(Date.now() - last_stupid_shop_epoch);
+
+    }
+
+    function do_w_thing() {
+
+        t_kg.innerHTML = `${im_fat_fuck != null ? im_fat_fuck : "--"} kg`;
+        t_kg_change.innerHTML = `${im_fat_fuck != null && last_fat_fuck != null ? (im_fat_fuck > last_fat_fuck ? '↑' : '↓') : ''}${im_fat_fuck != null && last_fat_fuck != null ? Math.abs(im_fat_fuck - last_fat_fuck) : "--"}kg`;
+        t_kg_change.style.color = im_fat_fuck < last_fat_fuck ? 'green' : 'red';
+        t_kg_change.style.opacity = im_fat_fuck != null & last_fat_fuck != null ? '1' : '0';
+        t_kg_upd_bmi.innerHTML = bmi == null ? "--" : bmi;
+
+    }
+
+    function do_upd_last_bmi() {
+
+        t_kg_last_upd_bmi_epoch.innerHTML = do_format_fuckful_time(Date.now() - bmi_change_epoch);
+
+    }
+
+    function do_time_els_zeros(arg) {
+
+        let leaveSign = arg < 0 ? '-' : '';
+
+        if(arg == 0) return leaveSign+'00';
+        else if(Math.abs(arg) < 10) return leaveSign+'0'+arg;
+        else return leaveSign+arg;
+
+    }
+
+    function do_tell_time() {
+
+        let myNow = new Date(new Date().toLocaleString('en', {timeZone: 'Asia/Dubai'}));
+        let hr = myNow.getHours();
+        local_time_upd_el_clock.innerHTML = `${do_time_els_zeros(hr)}${myNow.getSeconds()%2==0?":":" "}${do_time_els_zeros(myNow.getMinutes())}${myNow.getSeconds()%2==0?":":" "}${do_time_els_zeros(myNow.getSeconds())}`;
+        local_time_upd_el_day.innerHTML = `${week_day_array[myNow.getDay()]}`;
+
+        offline_or.innerHTML = hr >= 23 || hr <= 8 ? 'offline' : 'online';
+        offline_or.style.color = hr >= 23 || hr <= 8 ? 'red' : 'green';
+
+    }
+
+    function do_make_cool_title() {
+
+        document.title = `cau : ${title_messages[Math.floor(Math.random() * title_messages.length)]}`;
+
+    }
+
+    function do_toggle_menu() {
+
+        let itsblock = options_el.style.display == "block";
+        options_el.style.display = itsblock ? "none" : "block";
+        tgl_menu_btn.innerHTML = !itsblock ? "hide menu" : "show menu";
+
+    }
+
+    function do_opt_apply() {
+
+        localStorage.setItem("tps", (tps_field_el.value) || 20);
+
+    }
+
+    function do_reload_page() {
+
+        window.location = window.location;
+
+    }
+
+    function do_set_ls_vals_to_fields() {
+
+        tps_field_el.value = tps;
+        bet_input_el.value = bet;
+
+    }
+
+    function do_reset() {
+
+        if(!reset_confirmed) {
+            reset_button.innerHTML = "really? you'll lose c$ too";
+            reset_confirmed = true;
+        } else {
+            localStorage.removeItem("tps");
+            localStorage.removeItem("c_dollar");
+            localStorage.removeItem("bet");
+            localStorage.removeItem("mult");
+            localStorage.removeItem("manage_cur_every_tick");
+            do_reload_page();
+        }
+        
+
+    }
+
+    function do_say_number() {
+
+        c3_coin.innerHTML = 'c$'+do_cool_format_number(c_dollar);
+
+    }
+
+    function do_save_currency() {
+
+        localStorage.setItem("c_dollar", c_dollar);
+        localStorage.setItem("mult", mult);
+
+    }
+
+    function do_upgrade_mult() {
+
+        mult += 1 + c_dollar/(Math.random() + 1.5);
+        c_dollar = 0;
+
+        do_save_currency();
+
+    }
+
+    function do_currency_update() {
+
+        c_dollar += 0.001 * Math.random() * 2 * mult;
+        do_save_currency();
+
+    }
+
+    function do_opt_coinflip() {
+
+        if(c_dollar > bet) {
+
+            if(Math.random() < 0.5) c_dollar -= bet;
+            else c_dollar += bet;
+
+        }
+
+    }
+
+    function do_upgrade_cur_management() {
+
+        if(!(c_dollar < 1000)) {
+
+            c_dollar -= 1000;
+            manage_cur_every_tick = true;
+            localStorage.setItem("manage_cur_every_tick", "gngidofgngjdifkngd");
+
+        } 
+
+        do_save_currency();
+
+    }
+
+    function do_update_weather() {
+
+        fetch("https://hrt-yuri.art/api/weather_in_uly")
+        .then(function(response) { return response.json(); })
+        .then(function(data) {
+
+            temp_weather.innerHTML = `${data.weather.main.temp}°C `;
+            feels_like_weather.innerHTML = `~ ${data.weather.main.feels_like}°C`;
+            description_weather.innerHTML = data.weather.weather[0].description;
+            c_1_b_2_weather.style.backgroundImage = (data.weather.clouds.all < 40) ? "url('./photo-1509803874385-db7c23652552.jpg')" : "url('./images.jpg')";
+
+        })
+        .catch(function() {
+        
+            description_weather.innerHTML = "my pc is probably off lol"
+
+        })
+        
+    }
+
+    function do_every_sec() {
+
+        do_update_age();
+        do_tell_time();
+        do_currency_update();
+
+    }
+
+    function do_every_min() {
+
+        do_update_weather();
+
+    }
+
+    function do_every_tick() {
+
+        last_tick = Date.now();
+        do_update_garbage_food();
+        do_upd_last_bmi();
+        do_say_number();
+        if(manage_cur_every_tick) do_currency_update();
+        pace_el.innerHTML = `pace: ${1000/(Date.now() - last_tick == 0 ? 1 : Date.now() - last_tick)}/${tps} tps`;
+
+
+    }
+
+    alia.onmouseenter = function() {
+        alia.innerHTML = "cauvac";
+    };
+
+    alia.onmouseleave = function() {
+        alia.innerHTML = "cauvas";
+    };
+
+    window.onresize = do_canonic_resize;
+    window.onload = function() {
+
+        do_canonic_resize();
+        do_w_thing();
+        do_make_cool_title();
+        do_set_ls_vals_to_fields();
+
+    };
+
+    bet_input_el.oninput = function() {
+
+        bet = parseFloat(bet_input_el.value)
+        localStorage.setItem("bet", bet);
+
+    }
+
+    do_every_min();
+    do_every_sec();
+    do_every_tick();
+    setInterval(do_every_min, 60000);
+    setInterval(do_every_sec, 1000);
+    setInterval(do_every_tick, 1000/tps);
+
+    run_result.innerHTML = `js took ${Date.now() - time_now}ms`;
+
+</script>
+
+</body>
+
+</html> 
