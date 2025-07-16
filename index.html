@@ -13,6 +13,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <meta charset="utf-8">
     <title>cau</title>
     <style>
@@ -76,12 +79,13 @@
             --generic-block-1-background-color: rgba(12, 12, 12, 1);
             --osu-accent: #b03c6c;
             --lastfm-accent: red;
-            --steam-accent: rgba(7, 7, 50, 1);
+            --steam-accent: rgba(0, 0, 21, .7);
             --font-1: "Arial", system-ui;
             --font-2: "Roboto Flex";
             --font-3: "Archivo";
             --font-4: "SegoeUI";
             --font-5: "Libertinus Mono";
+            --font-6: "Ubuntu Mono";
 
         }
 
@@ -152,7 +156,7 @@
             width: 32rem;
 
             background-image: url("./Koi-Pond.jpg");
-            background-blend-mode:soft-light;
+            background-blend-mode:exclusion;
             background-size: contain;
             background-color: var(--generic-block-1-background-color);
 
@@ -217,12 +221,28 @@
 
         }
 
+        div#super-info-block {
+            background: rgba(0, 0, 0, 0.8);
+            min-width: 70%;
+            width: fit-content;
+            padding: 0.4rem;
+            line-height: 0.9;
+        }
+
         h1#caukan {
 
             font-family: var(--font-3);
             font-size: 2.5rem;
-            animation: cau 0.4s ease-in-out 0s infinite;
+            width: fit-content;
 
+        }
+
+        ul {
+            line-height: 1;
+        }
+
+        span#alia {
+            animation: cau 0.4s ease-in-out 0s infinite;
         }
 
         span#fishi {
@@ -411,9 +431,10 @@
 
         img#osu-pfp-hello {
 
-            position: absolute;
-            top: 4.35rem;
-            left: 31.2rem;
+            position: relative;
+            float: right;
+            right: 0;
+            bottom: 0;
 
             width: 4rem;
             height: 4rem;
@@ -432,6 +453,72 @@
 
         }
 
+        small#aka {
+            font-size: 0.5rem;
+        }
+
+        div#fancy-links-or-smth {
+            display: grid;
+            grid-template-columns: 47.5% 47.5%;
+            column-gap: 5%;
+            justify-content: center;
+        }
+
+        div#fancy-links-or-smth {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        button.flos-primary-button {
+            font-family: var(--font-3);
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: .4rem;
+            font-size: 1.5rem;
+            text-align: left;
+        }
+
+        button.flos-primary-button:hover {
+            text-decoration: underline;
+        }
+
+        button#flos-lastfm {
+            background-color: rgba(48, 0, 0, 0.5);
+            color: var(--generic-text-white);
+            border: 0.2rem solid var(--lastfm-accent);
+        }
+
+        button#flos-lastfm:hover {
+            border: 0.3rem solid var(--lastfm-accent);
+        }
+
+        button#flos-steam {
+            background-color: var(--steam-accent);
+            color: var(--generic-text-white);
+            border: 0.2rem solid rgba(255, 255, 255, .7);
+        }
+
+        button#flos-steam:hover {
+            border: 0.3rem solid rgba(255, 255, 255, .7);
+            transition: 888ms linear;
+        }
+
+        div.flos-add-data {
+            font-family: var(--font-6);
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 0.4rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+        }
+
+        h1#loading {
+            font-size: 4rem;
+            font-family: var(--font-2);
+            color: red;
+            z-index: 999;
+        }
+
     </style>
 </head>
 
@@ -440,22 +527,35 @@
     <div id="container-1" class="horizontal-center">
 
         <div id="container-1-block-1" class="generic-block">
-
-            <img src="https://a.ppy.sh/12974047" id="osu-pfp-hello" title="my osu pfp">
-            <h1 id="caukan"><span id="alia">cauvas</span> <span id="fishi">><></span></h1>
-            <ul style="list-style:square;">
-            	<li>aka Cau2Ryby</li>
-                <li>im <span id="thing-age"></span> years old</li>
-                <li>he/him - RU&EN OK</li>
-                <li>i map and play <i>(std + taiko)</i> -> <a href="https://osu.ppy.sh/users/12974047" noreferrer target="_blank" id="osu-href">osu! profile</a></li>
-                <li><a href="https://last.fm/user/cau2ryby" noreferrer target="_blank" id="lastfm-href">last.fm</a> : <a href="https://drive.google.com/drive/folders/1TNuZDzIdEquo8kuAziaaTYbcXGgHDdDG?usp=drive_link" noreferrer target="_blank">offline files</a></li>
-                <li>-> <a href="https://steamcommunity.com/id/cauvas/" noreferrer target="_blank" id="steam-href">steam</a> <- im gamemaxxing</li>
-                <li>ceo of [fish]</li>
-                <li>got confused with a girl 12 times<br>hit by a car once</li>
-                <li>wanna go for drawing, making listenable music. surely <em>in the future!</em></li>
-            </ul>
-            <h2>i like aak arknights even though</h2>
-            <p>i have no idea what arknights is about and what he does there</p>
+            
+            <a href="https://osu.ppy.sh/users/12974047" noreferrer target="_blank" id="osu-href"><img src="https://a.ppy.sh/12974047" id="osu-pfp-hello" title="my osu pfp"></a>
+            <h1 id="loading">LOADING PLEASE WAIT !!!</h1>
+            <div id="super-info-block">
+                <h1 id="caukan"><span id="alia">cauvas</span> <span id="fishi">><></span></h1><small id="aka">aka Cau2Ryby</small>
+                <ul style="list-style:square;">
+                    <li>im <span id="thing-age"></span></li>
+                    <li>[fish] ceo</li>
+                </ul>
+            </div>
+            <div id="fancy-links-or-smth">
+                <div id="last-fm" class="flos-block">
+                    <a href="https://last.fm/user/cau2ryby" noreferrer target="_blank"><button class="flos-primary-button" id="flos-lastfm">last.fm</button></a>
+                    <div class="flos-add-data" id="flos-lastfm-add-data">
+                        <h1><img style="width: 1.6rem; margin-right: 0.4rem;" id="lfm-pfp"><span id="lfm-username">Empty!</span></h1>
+                        <p id="lfm-scrobble-state">idk i'll tell you in a minute</p>
+                        <p id="lfm-scrobble-detail">Artist - Song</p>
+                        <p id="lfm-scrobble-over" style="opacity: 0.5">30min ago</p>
+                    </div>
+                </div>
+                <div id="steam" class="flos-block">
+                    <a href="https://steamcommunity.com/id/cauvas/" noreferrer target="_blank" id="steam-href"><button class="flos-primary-button" id="flos-steam">steam</button></a>
+                    <div class="flos-add-data" id="flos-steam-add-data">
+                        <h1><img style="width: 1.6rem; margin-right: 0.4rem;" id="steam-pfp"><span id="steam-name">Empty!</span></h1>
+                        <p id="steam-state">state</p>
+                        <p id="steam-playing-or-dead">playing something</p>
+                    </div>
+                </div>
+            </div>
 
             <img src="good-morning-aak-arknights.gif" style="width: 100%; aspect-ratio: 3;">
 
@@ -484,15 +584,8 @@
                 
                 <a href="https://hrt-yuri.art" target="_blank" noreferrer><button id="ets2-aka-soggy" class="some-btn">hrt-yuri.art<br><small>(probably <span id="offline-or">offline</span>)</small></button></a>
                 
-                <div id="c-1-b-2-random-shit">
-                    
-                    <p title="i only go for beverages now. fuck all that food man">* i havent bought random harmful shit from groceries for <i><span id="junk-timer"></span></i></p>
-                    <br><p class="bottom-half-of-c-1-b-2-random-shit">* i weigh <span id="t-kg">--</span> <span id="t-kg-change">↑2.22</span><br>bmi: <span id="t-kg-upd-bmi"></span></p><p class="bottom-half-of-c-1-b-2-random-shit"><small>last update <span id="last-update-time-output-by-epoch"></span> ago</small></p>
-
-                </div>
-                
                 <ul style="margin-top: 0.9rem;">
-                    <li><a href="https://twitter.com/cau2ryby" target="_blank" noreferrer>twitter</a></li>
+                    <li><a href="https://twitter.com/cauvac" target="_blank" noreferrer>twitter</a></li>
                     <li><a href="https://ch.tetr.io/u/cau2ryby" target="_blank" noreferrer>tetra channel</a></li>
                 </ul>
             
@@ -518,7 +611,7 @@
         <br><br>
         <p id="resize-info"></p>
         <br>
-        <p>last update: 27.06.2025</p>
+        <p>last update: 16.07.2025</p>
         <p id="run-result">took --ms</p>
         <p id="pace-el">pace: --/--tps</p>
 
@@ -535,12 +628,7 @@
     // elements variables
 
     let html_tag = document.querySelector("html");
-    let t_kg = document.getElementById("t-kg");
-    let t_kg_change = document.getElementById("t-kg-change");
-    let t_kg_upd_bmi = document.getElementById("t-kg-upd-bmi");
-    let t_kg_last_upd_bmi_epoch = document.getElementById("last-update-time-output-by-epoch");
     let update_age_el = document.getElementById("thing-age");
-    let junk_timer_el = document.getElementById("junk-timer"); 
     let local_time_upd_el_clock = document.getElementById("c-1-b-2-time-clock");
     let local_time_upd_el_day = document.getElementById("c-1-b-2-time-day");
     let container_1 = document.getElementById("container-1");
@@ -561,7 +649,16 @@
     let description_weather = document.getElementById("description-weather");
     let c_1_b_2_weather = document.getElementById("c-1-b-2-weather");
     let alia = document.getElementById("alia");
-
+    let steam_playing_or_dead = document.getElementById("steam-playing-or-dead"), 
+        steam_state = document.getElementById("steam-state"), 
+        steam_pfp = document.getElementById("steam-pfp"), 
+        steam_name = document.getElementById("steam-name")
+    let lfm_username = document.getElementById("lfm-username"),
+        lfm_pfp = document.getElementById("lfm-pfp"),
+        lfm_scrobble_detail = document.getElementById("lfm-scrobble-detail"),
+        lfm_scrobble_over = document.getElementById("lfm-scrobble-over"),
+        lfm_scrobble_state = document.getElementById("lfm-scrobble-state")
+        
     // found this the other day
 
     function Enum(values) {
@@ -589,6 +686,24 @@
     'nognt.', 'unngt.', 'dungt.', 'trngt.', 'qangt.', 'qungt.', 'sxngt.', 'spngt.', 'ocngt.', 'nongt.', 
     'centi.'
     ];
+    const steam_states = ["offline", "online", "busy", "away", "snooze"]
+    const steam_state_styles = {
+        [0]: {
+            color: "rgba(128, 128, 128, 0.7)"
+        },
+        [1]: {
+            color: "rgba(0, 212, 255, 1)"
+        },
+        [2]: {
+            color: "rgba(255, 48, 0, 1)"
+        },
+        [3]: {
+            color: "rgba(144, 212, 255, .8)"
+        },
+        [4]: {
+            color: "rgba(144, 212, 255, .5)"
+        }
+    }
     const default_values = {
         "tps": 20,
         "c_dollar": 0,
@@ -619,15 +734,6 @@
     let manage_cur_every_tick = localStorage.getItem("manage_cur_every_tick") != null ? true : false;
     
     // values i'll change over time
-
-    let last_stupid_shop_epoch = 0;
-
-    let im_fat_fuck = 0;
-    let heit = 1.81;
-
-    let bmi = im_fat_fuck != null ? im_fat_fuck / (heit*heit) : null;
-
-    let last_fat_fuck = 0;
 
     // functions and events - bringing everything together
 
@@ -704,28 +810,6 @@
     function do_update_age() {
 
         update_age_el.innerHTML = `${Math.floor((Date.now() - birth_date_epoch) / 31536000000 * 1000) / 1000}`;
-
-    }
-
-    function do_update_garbage_food() {
-
-        junk_timer_el.innerHTML = do_format_fuckful_time(Date.now() - last_stupid_shop_epoch);
-
-    }
-
-    function do_w_thing() {
-
-        t_kg.innerHTML = `${im_fat_fuck != null ? im_fat_fuck : "--"} kg`;
-        t_kg_change.innerHTML = `${im_fat_fuck != null && last_fat_fuck != null ? (im_fat_fuck > last_fat_fuck ? '↑' : '↓') : ''}${im_fat_fuck != null && last_fat_fuck != null ? Math.abs(im_fat_fuck - last_fat_fuck) : "--"}kg`;
-        t_kg_change.style.color = im_fat_fuck < last_fat_fuck ? 'green' : 'red';
-        t_kg_change.style.opacity = im_fat_fuck != null & last_fat_fuck != null ? '1' : '0';
-        t_kg_upd_bmi.innerHTML = bmi == null ? "--" : bmi;
-
-    }
-
-    function do_upd_last_bmi() {
-
-        t_kg_last_upd_bmi_epoch.innerHTML = do_format_fuckful_time(Date.now() - bmi_change_epoch);
 
     }
 
@@ -869,10 +953,50 @@
         })
         .catch(function() {
         
-            description_weather.innerHTML = "my pc is probably off lol"
+            description_weather.innerHTML = "server down oops"
 
         })
         
+    }
+
+    function check_steam() {
+        fetch("https://hrt-yuri.art/api/cau/steam")
+        .then(response => {return response.json()})
+        .then(function(data) {
+            // steam_playing_or_dead 
+            // steam_state
+            // steam_pfp 
+            // steam_name
+            let re = data.cauvas.response.players[0]
+            steam_pfp.src = re.avatarfull
+            steam_name.innerHTML = re.personaname
+            steam_state.innerHTML = steam_states[re.personastate]
+            steam_state.style.color = re.gameextrainfo == undefined ? steam_state_styles[re.personastate].color : "rgba(45, 200, 45, 0.9)"
+            steam_playing_or_dead.innerHTML = re.personastate != 0 ? 
+            re.gameextrainfo != undefined ? `playing ${re.gameextrainfo}` : ""
+            : `last seen ${do_format_fuckful_time(Date.now() - re.lastlogoff*1000)} ago`
+            steam_playing_or_dead.style = re.personastate != 0 ? 
+            re.gameextrainfo != undefined ? `font-size: 1rem` : `font-size: 1rem`
+            : `font-size: 0.8rem; color: rgba(128, 128, 128, 0.7)`
+        })
+    }
+
+    function check_lfm() {
+        fetch("https://hrt-yuri.art/api/cau/lfm")
+        .then(response => {return response.json()})
+        .then(function(data) {
+            let playing
+            try {
+                playing = data.recent_tracks.recenttracks.track[0]["@attr"].nowplaying
+                } catch { playing = false }
+            lfm_username.innerHTML = data.gen_info.user.name
+            lfm_pfp.src = data.gen_info.user.image[0]["#text"]
+            lfm_scrobble_state.innerHTML = playing
+            ? "scrobbling now ..." : "scrobbled"
+            lfm_scrobble_detail.innerHTML = `${data.recent_tracks.recenttracks.track[0].artist["#text"]} - ${data.recent_tracks.recenttracks.track[0].name}`
+            lfm_scrobble_over.innerHTML = playing
+            ? "" : do_format_fuckful_time(Date.now() - parseInt(data.recent_tracks.recenttracks.track[0].date.uts)*1000) + " ago"
+        })
     }
 
     function do_every_sec() {
@@ -881,6 +1005,11 @@
         do_tell_time();
         do_currency_update();
 
+    }
+
+    function do_every_4_secs() {
+        check_lfm()
+        check_steam()
     }
 
     function do_every_min() {
@@ -892,8 +1021,6 @@
     function do_every_tick() {
 
         last_tick = Date.now();
-        do_update_garbage_food();
-        do_upd_last_bmi();
         do_say_number();
         if(manage_cur_every_tick) do_currency_update();
         pace_el.innerHTML = `pace: ${1000/(Date.now() - last_tick == 0 ? 1 : Date.now() - last_tick)}/${tps} tps`;
@@ -912,10 +1039,12 @@
     window.onresize = do_canonic_resize;
     window.onload = function() {
 
+        document.getElementById("loading").innerHTML = ""
         do_canonic_resize();
-        do_w_thing();
         do_make_cool_title();
         do_set_ls_vals_to_fields();
+        check_steam()
+        check_lfm()
 
     };
 
@@ -931,6 +1060,7 @@
     do_every_tick();
     setInterval(do_every_min, 60000);
     setInterval(do_every_sec, 1000);
+    setInterval(do_every_4_secs, 4000)
     setInterval(do_every_tick, 1000/tps);
 
     run_result.innerHTML = `js took ${Date.now() - time_now}ms`;
