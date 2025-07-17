@@ -105,10 +105,10 @@
         body {
 
             background: url("./IMG_20250607_215859_536.jpg");
-            background-size: cover;
+            background-size: contain;
             background-position-x: 30%;
+            height: 300%;
             min-height: 100%;
-            height: fit-content;
 
         }
 
@@ -125,8 +125,8 @@
             flex-direction: row;
 
             width: fit-content;
-            height: fit-content;
-            min-height: 80%;
+            height: 100%;
+            min-height: 100%;
             max-width: 100%;
 
             justify-content: center;
@@ -136,7 +136,8 @@
         div.generic-block {
 
             margin: 2rem;
-            margin-top: 4rem;
+            margin-top: 1rem;
+            height: 100%;
 
         }
         
@@ -152,11 +153,11 @@
 
             padding: 0.8rem;
             display: block;
-            height: 100%;
+            min-height: 100%;
             width: 32rem;
 
-            background-image: url("./Koi-Pond.jpg");
-            background-blend-mode:exclusion;
+            background-image: url("./lionello-delpiccolo-qEswHvOmi1c-unsplash.jpg");
+            background-blend-mode:normal;
             background-size: contain;
             background-color: var(--generic-block-1-background-color);
 
@@ -173,6 +174,7 @@
 
             height: fit-content;
             width: 20rem;
+            padding: .8rem;
 
         }
 
@@ -181,19 +183,6 @@
             width: fit-content;
             margin-bottom: 0.7rem;
             min-width: 16rem;
-
-        }
-
-        div#c-1-b-2-random-shit {
-
-            outline: 0.2rem solid black;
-            font-family: var(--font-2);
-            font-size: 1.1rem;
-            background-image: url("./HD-wallpaper-blue-fire-background-macro-fire-textures-blue-fire-flames-fire-background-with-fire-fire-flames.jpg");
-            background-size: contain;
-            background-blend-mode:multiply;
-            padding: 0.4rem;
-            margin-top: 0.9rem;
 
         }
 
@@ -403,7 +392,6 @@
             width: 12rem;
             background-color: rgba(0, 0, 0, 0.7);
             padding: 0.4rem;
-            margin-top: 0.9rem;
             font-family: var(--font-5);
             color: rgba(255, 233, 233, 0.95)
 
@@ -414,8 +402,6 @@
         }
 
         div#c-1-b-2-weather {
-
-            margin-top: 0.9rem;
             min-width: 60%;
             width:fit-content;
             max-width: 100%;
@@ -460,6 +446,8 @@
         div#fancy-links-or-smth {
             display: grid;
             grid-template-columns: 47.5% 47.5%;
+            grid-template-rows: 100% 100%;
+            row-gap: 10%;
             column-gap: 5%;
             justify-content: center;
         }
@@ -519,16 +507,22 @@
             z-index: 999;
         }
 
+        div#container-1-block-2>* {
+            margin-top: .8rem;
+        }
+
+        .remove-margin-totally {
+            margin: 0 !important;
+        }
+
     </style>
 </head>
 
 <body>
 
-    <div id="container-1" class="horizontal-center">
+    <div id="container-1">
 
-        <div id="container-1-block-1" class="generic-block">
-            
-            <a href="https://osu.ppy.sh/users/12974047" noreferrer target="_blank" id="osu-href"><img src="https://a.ppy.sh/12974047" id="osu-pfp-hello" title="my osu pfp"></a>
+        <div id="container-1-block-1">
             <h1 id="loading">LOADING PLEASE WAIT !!!</h1>
             <div id="super-info-block">
                 <h1 id="caukan"><span id="alia">cauvas</span> <span id="fishi">><></span></h1><small id="aka">aka Cau2Ryby</small>
@@ -537,6 +531,7 @@
                     <li>[fish] ceo</li>
                 </ul>
             </div>
+            <hr>
             <div id="fancy-links-or-smth">
                 <div id="last-fm" class="flos-block">
                     <a href="https://last.fm/user/cau2ryby" noreferrer target="_blank"><button class="flos-primary-button" id="flos-lastfm">last.fm</button></a>
@@ -556,40 +551,31 @@
                     </div>
                 </div>
             </div>
-
+            <hr>
             <img src="good-morning-aak-arknights.gif" style="width: 100%; aspect-ratio: 3;">
-
             <p style="font-size: 0.7rem; opacity: 0.8; text-align: center;">if you want content created by you gone from this webpage, email me at cauvas@hrt-yuri.art</p>
+            <hr>
+            <h1>death zone</h1>
+            <p>unused elements that will soon find their place with different usage</p>
+            <a href="https://osu.ppy.sh/users/12974047" noreferrer="" target="_blank" id="osu-href"><img src="https://a.ppy.sh/12974047" id="osu-pfp-hello" title="my osu pfp"></a>
 
         </div>
-        <div id="container-1-block-2" class="generic-block">
+        <div id="container-1-block-2">
 
-            <div id="c-1-b-1-former-half" class="c-1-b-2-half">
-
-                <button class="some-btn" onclick="do_toggle_menu();" id="opt-sh-btn">show menu</button><h3 id="c3-coin">c$ 4.392</h3>
-
-                <div id="c1-bdatentime">
+                <div id="c1-bdatentime" class="remove-margin-totally">
                     <h1 id="c-1-b-2-time-clock"></h1>
                     <p id="c-1-b-2-time-day"></p>
                 </div>
-
                 <div id="c-1-b-2-weather">
                     <h1 class="c-1-b-2-weather-text-el"><span id="temp-weather">--°C </span><small style="font-size: 1.5rem; opacity: 0.7;" id="feels-like-weather">~ --°C</small></h1>
                     <h3 id="description-weather" class="c-1-b-2-weather-text-el">moderate rain</h3>
                 </div>
-
-            </div>
-
-            <div id="c-1-b-2-latter-half" class="c-1-b-2-half">
-                
                 <a href="https://hrt-yuri.art" target="_blank" noreferrer><button id="ets2-aka-soggy" class="some-btn">hrt-yuri.art<br><small>(probably <span id="offline-or">offline</span>)</small></button></a>
-                
-                <ul style="margin-top: 0.9rem;">
+                <div><button class="some-btn" onclick="do_toggle_menu();" id="opt-sh-btn">show menu</button><h3 id="c3-coin">c$ 4.392</h3></div>
+                <ul>
                     <li><a href="https://twitter.com/cauvac" target="_blank" noreferrer>twitter</a></li>
                     <li><a href="https://ch.tetr.io/u/cau2ryby" target="_blank" noreferrer>tetra channel</a></li>
                 </ul>
-            
-            </div>
 
         </div>
 
@@ -718,7 +704,7 @@
     let text_resize_modes = Enum(["vmax", "vmin", "vh", "vw"]);
 
     let text_resize_mode = text_resize_modes["vmax"];
-    let text_default_percentage = 1.05;
+    let text_default_percentage = 1.155;
 
     // timestamps for something
 
@@ -762,16 +748,7 @@
 
         }
 
-        if(column) font_size *= 1.3;
-
         html_tag.style.fontSize = `${font_size}px`;
-
-        // additionally,
-
-        container_1.style.flexDirection = column ? "column" : "row";
-        container_1_block_2.style.width = !column ? "20rem" : "34rem"; 
-        container_1_block_2.style.flexDirection = !column ? "column" : "row";
-        container_1_block_2.style.marginTop = !column ? "4rem" : "1rem";
 
         resize_info.innerHTML = `font-size: ${font_size}px<br>mode: ${column ? "column" : "row"}<br>window size: ${w_width}x${w_height}`;
 
