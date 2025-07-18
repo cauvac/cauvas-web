@@ -107,7 +107,7 @@
             background: url("./IMG_20250607_215859_536.jpg");
             background-size: contain;
             background-position-x: 30%;
-            height: 300%;
+            height: fit-content;
             min-height: 100%;
 
         }
@@ -211,11 +211,18 @@
         }
 
         div#super-info-block {
+            display: flex;
+            flex-direction: row;
             background: rgba(0, 0, 0, 0.8);
-            min-width: 70%;
-            width: fit-content;
             padding: 0.4rem;
             line-height: 0.9;
+        }
+
+        div#super-info-block>img#self-view {
+            height: 7rem;
+            margin-right: 1rem;
+            border: 0.08rem solid red;
+            aspect-ratio: 1;
         }
 
         h1#caukan {
@@ -369,9 +376,9 @@
             display: none;
             background-color: var(--generic-border-white);
             padding: 1rem;
-            margin-top: 2rem;
             z-index: 400;
             border: 0.2rem solid white;
+            color: black;
 
         }
 
@@ -515,6 +522,17 @@
             margin: 0 !important;
         }
 
+        div#footer-links {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .fl-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
     </style>
 </head>
 
@@ -525,13 +543,24 @@
         <div id="container-1-block-1">
             <h1 id="loading">LOADING PLEASE WAIT !!!</h1>
             <div id="super-info-block">
-                <h1 id="caukan"><span id="alia">cauvas</span> <span id="fishi">><></span></h1><small id="aka">aka Cau2Ryby</small>
-                <ul style="list-style:square;">
-                    <li>im <span id="thing-age"></span></li>
-                    <li>[fish] ceo</li>
-                </ul>
+                <img src="" id="self-view" alt="this was supposed to be a 'self-view'. i just barely have art of what i imagine my sona to be">
+                <div>
+                    <h1 id="caukan"><span id="alia">cauvas</span> <span id="fishi">><></span></h1><small id="aka">aka Cau2Ryby, formerly by many others, unfortunately</small>
+                    <ul style="list-style:square;">
+                        <li>im <span id="thing-age"></span></li>
+                        <li>[fish] ceo</li>
+                    </ul>
+                </div>
             </div>
             <hr>
+            <h1>hello!</h1>
+            <p>this website is a mess in its current state. although the rough image of it i have inside my head is
+                almost brought to life, i still think of things to add here daily lol</p>
+            <i>note: if the links details (below) &/ the weather widget tells that the server is down,
+                that means my little rest api thing is really down. i'm still figuring that out lol
+            </i>
+            <img src="good-morning-aak-arknights.gif" style="width: 100%; aspect-ratio: 3;">
+            <p style="font-size: 0.7rem; opacity: 0.8; text-align: center;">if you want your content gone from this webpage, email me at cauvas@hrt-yuri.art<hr>
             <div id="fancy-links-or-smth">
                 <div id="last-fm" class="flos-block">
                     <a href="https://last.fm/user/cau2ryby" noreferrer target="_blank"><button class="flos-primary-button" id="flos-lastfm">last.fm</button></a>
@@ -551,17 +580,24 @@
                     </div>
                 </div>
             </div>
-            <hr>
-            <img src="good-morning-aak-arknights.gif" style="width: 100%; aspect-ratio: 3;">
-            <p style="font-size: 0.7rem; opacity: 0.8; text-align: center;">if you want content created by you gone from this webpage, email me at cauvas@hrt-yuri.art</p>
-            <hr>
-            <h1>death zone</h1>
-            <p>unused elements that will soon find their place with different usage</p>
             <a href="https://osu.ppy.sh/users/12974047" noreferrer="" target="_blank" id="osu-href"><img src="https://a.ppy.sh/12974047" id="osu-pfp-hello" title="my osu pfp"></a>
-
+            <h2>other links i can't be bothered to go into details of right now</h2>
+            <ul>
+                <li><a href="https://twitter.com/cauvac" target="_blank" noreferrer>twitter</a></li>
+                <li><a href="https://ch.tetr.io/u/cau2ryby" target="_blank" noreferrer>tetra channel</a></li>
+                <li>hold on i dont remember what i wanted to insert here</li>
+                <li></li>
+            </ul>
+            <hr>
+            <div id="footer-links">    
+                <div id="fl-row-1" class="fl-row">
+                    <a href="https://hrt-yuri.art" target="_blank" noreferrer><button id="ets2-aka-soggy" class="some-btn">hrt-yuri.art<br><small>(probably <span id="offline-or">offline</span>)</small></button></a>
+                    <a href="https://hrt-yuri.art" target="_blank" noreferrer><button class="some-btn">sample-link-fuckthisshit.com<br><small>(sample button)</small></button></a>
+                </div>
+                <h1 style="color: red">CONSTRUCTION ZONE. FANCY RESOURCES WILLL BE HERE WHEN I GET MY SHIT TOGETHER</h1>
+            </div> 
         </div>
         <div id="container-1-block-2">
-
                 <div id="c1-bdatentime" class="remove-margin-totally">
                     <h1 id="c-1-b-2-time-clock"></h1>
                     <p id="c-1-b-2-time-day"></p>
@@ -570,36 +606,28 @@
                     <h1 class="c-1-b-2-weather-text-el"><span id="temp-weather">--°C </span><small style="font-size: 1.5rem; opacity: 0.7;" id="feels-like-weather">~ --°C</small></h1>
                     <h3 id="description-weather" class="c-1-b-2-weather-text-el">moderate rain</h3>
                 </div>
-                <a href="https://hrt-yuri.art" target="_blank" noreferrer><button id="ets2-aka-soggy" class="some-btn">hrt-yuri.art<br><small>(probably <span id="offline-or">offline</span>)</small></button></a>
                 <div><button class="some-btn" onclick="do_toggle_menu();" id="opt-sh-btn">show menu</button><h3 id="c3-coin">c$ 4.392</h3></div>
-                <ul>
-                    <li><a href="https://twitter.com/cauvac" target="_blank" noreferrer>twitter</a></li>
-                    <li><a href="https://ch.tetr.io/u/cau2ryby" target="_blank" noreferrer>tetra channel</a></li>
-                </ul>
+                <div id="options">
+                    <p>tps: <input type="number" id="tps-val" class="op-num-field"></p>
+                    <button id="op-apply" class="op-btn" onclick="do_opt_apply();">apply</button>
+                    <button id="op-reload" class="op-btn" onclick="do_reload_page();">reload</button>
+                    <button id="op-reset" class="op-btn" onclick="do_reset();">reset</button>
+                    <br><br>
+                    <h3>gamble w/ c$</h3>
+                    <p>bet: <input type="number" id="c_dollar_gamb_bet" class="op-num-field"></p>
+                    <button id="op-coinflip" class="op-btn" onclick="do_opt_coinflip();">coinflip</button>
+                    <button id="op-upgr-mult" class="op-btn" onclick="do_upgrade_mult();" title="grabs all ur c$ but increases mult somewhat">upgrade c$ mult</button>
+                    <button id="op-upgr-mult" class="op-btn" onclick="for(let i = 0; i < 22; i++) do_upgrade_mult();" title="does that 22 times. okay">x22</button><br>
+                    <button id="op-upgr-man-cur" class="op-btn" onclick="do_upgrade_cur_management();">enable currency updates every tick (c$1 thous.)</button>
+                    <br><br>
+                    <p id="resize-info"></p>
+                    <br>
+                    <p>last update: 16.07.2025</p>
+                    <p id="run-result">took --ms</p>
+                    <p id="pace-el">pace: --/--tps</p>
+                </div>
 
         </div>
-
-    </div>
-
-    <div id="options" class="horizontal-center">
-        
-        <p>tps: <input type="number" id="tps-val" class="op-num-field"></p>
-        <button id="op-apply" class="op-btn" onclick="do_opt_apply();">apply</button>
-        <button id="op-reload" class="op-btn" onclick="do_reload_page();">reload</button>
-        <button id="op-reset" class="op-btn" onclick="do_reset();">reset</button>
-        <br><br>
-        <h3>gamble w/ c$</h3>
-        <p>bet: <input type="number" id="c_dollar_gamb_bet" class="op-num-field"></p>
-        <button id="op-coinflip" class="op-btn" onclick="do_opt_coinflip();">coinflip</button>
-        <button id="op-upgr-mult" class="op-btn" onclick="do_upgrade_mult();" title="grabs all ur c$ but increases mult somewhat">upgrade c$ mult</button>
-        <button id="op-upgr-mult" class="op-btn" onclick="for(let i = 0; i < 22; i++) do_upgrade_mult();" title="does that 22 times. okay">x22</button><br>
-        <button id="op-upgr-man-cur" class="op-btn" onclick="do_upgrade_cur_management();">enable currency updates every tick (c$1 thous.)</button>
-        <br><br>
-        <p id="resize-info"></p>
-        <br>
-        <p>last update: 16.07.2025</p>
-        <p id="run-result">took --ms</p>
-        <p id="pace-el">pace: --/--tps</p>
 
     </div>
 
