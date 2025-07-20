@@ -152,12 +152,16 @@
         div#container-1-block-1 {
 
             padding: 0.8rem;
+            padding-bottom: 0.4rem;
             display: block;
             min-height: 100%;
+            height: fit-content;
             width: 32rem;
+            max-width: 70%;
+            word-break: break-all;
 
             background-image: url("./lionello-delpiccolo-qEswHvOmi1c-unsplash.jpg");
-            background-blend-mode:normal;
+            background-blend-mode: color-dodge;
             background-size: contain;
             background-color: var(--generic-block-1-background-color);
 
@@ -192,6 +196,16 @@
             margin-block-end: 0;
             margin: 0;
 
+        }
+
+        hr {
+            margin-top: 0.7rem;
+            margin-bottom: 0.7rem;
+        }
+
+        ul {
+            margin-bottom: 0.2rem;
+            margin-top: 0.2rem;
         }
 
         @keyframes cau {
@@ -530,7 +544,40 @@
         .fl-row {
             display: flex;
             flex-direction: row;
-            justify-content: space-evenly;
+            justify-content: space-around;
+            margin-bottom: 0.8rem;
+        }
+
+        button#pat-know {
+            font-family: var(--font-5);
+            border: none;
+            line-height: 0.78;
+            background: #FEF6E4;
+            color: #856991;
+            font-weight: 800;
+            outline: none;
+        }
+
+        button#pat-know>small {
+            font-size: 0.6rem;
+        }
+
+        button#death-zone {
+            font-family: var(--font-5);
+            background-position-x: right;
+            line-height: 1.06;
+            background: url("./Screenshot_20250720_224214.png");
+        }
+        
+        button#radvea {
+            font-family: var(--font-6);
+            color: #F37065;
+            background: black;
+            line-height: 0.72;
+        }
+
+        button#radvea>small {
+            font-size: 0.6rem;
         }
 
     </style>
@@ -556,6 +603,11 @@
             <h1>hello!</h1>
             <p>this website is a mess in its current state. although the rough image of it i have inside my head is
                 almost brought to life, i still think of things to add here daily lol</p>
+            <h3>anyways,</h3>
+            <p>i like making stuff (and hate myself for not knowing how to draw and make music yet), sometimes enjoying pondering game level design.
+                maybe that's the reason i love mapping on osu and used to make geometry dash layouts, i'm unsure though
+            </p>
+            <p>you may know me. you may not. i dont know, i have done many things of varying and questionable quality</p>
             <i>note: if the links details (below) &/ the weather widget tells that the server is down,
                 that means my little rest api thing is really down. i'm still figuring that out lol
             </i>
@@ -592,9 +644,12 @@
             <div id="footer-links">    
                 <div id="fl-row-1" class="fl-row">
                     <a href="https://hrt-yuri.art" target="_blank" noreferrer><button id="ets2-aka-soggy" class="some-btn">hrt-yuri.art<br><small>(probably <span id="offline-or">offline</span>)</small></button></a>
-                    <a href="https://hrt-yuri.art" target="_blank" noreferrer><button class="some-btn">sample-link-fuckthisshit.com<br><small>(sample button)</small></button></a>
+                    <a href="https://patchouliknowledge.com" target="_blank" noreferrer><button class="some-btn" id="pat-know">patchouliknowledge.com<br><small>(typa sites actually worth checking<br>instead of this one)</small></button></a>
                 </div>
-                <h1 style="color: red">CONSTRUCTION ZONE. FANCY RESOURCES WILLL BE HERE WHEN I GET MY SHIT TOGETHER</h1>
+                <div id="fl-row-2" class="fl-row">
+                    <a href="https://death-zone.ets2.ru.net" target="_blank" noreferrer><button class="some-btn" id="death-zone">death-zone<br><small>(.ets2.ru.net)</small></button></a>
+                    <a href="https://radvea.nekoweb.org" target="_blank" noreferrer><button class="some-btn" id="radvea">radvea.nekoweb.org<br><small>(i hope he gets to<br>revamping it sometime)</small></button></a>
+                </div>
             </div> 
         </div>
         <div id="container-1-block-2">
@@ -626,6 +681,7 @@
                     <p id="run-result">took --ms</p>
                     <p id="pace-el">pace: --/--tps</p>
                 </div>
+                <img src="./maine-coon-1.gif" style="width: 10rem">
 
         </div>
 
@@ -776,6 +832,7 @@
 
         }
 
+        if(column) font_size*=1.3
         html_tag.style.fontSize = `${font_size}px`;
 
         resize_info.innerHTML = `font-size: ${font_size}px<br>mode: ${column ? "column" : "row"}<br>window size: ${w_width}x${w_height}`;
