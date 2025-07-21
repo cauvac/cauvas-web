@@ -504,9 +504,10 @@
                 <img src="" id="self-view" alt="this was supposed to be a 'self-view'. i just barely have art of what i imagine my sona to be">
                 <div>
                     <h1 id="caukan"><span id="alia">cauvas</span> <span id="fishi">><></span></h1><small id="aka">aka Cau2Ryby, formerly by many others, unfortunately</small>
-                    <ul style="list-style:square;">
+                    <ul style="margin-top: 0.4rem; margin-bottom: 0.4rem; list-style:square;">
                         <li>im <span id="thing-age"></span></li>
                         <li>[fish] ceo</li>
+                        <li>/kɑuvas/</li>
                     </ul>
                 </div>
             </div>
@@ -916,11 +917,11 @@
         do_update_age();
         do_tell_time();
         do_currency_update();
+        check_lfm()
+        check_steam()
     }
 
     function do_every_4_secs() {
-        check_lfm()
-        check_steam()
     }
 
     function do_every_min() {
