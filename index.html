@@ -763,7 +763,6 @@
     }
 
     function do_canonic_resize() {
-
         let w_height = window.innerHeight;
         let w_width = window.innerWidth;
 
@@ -1002,7 +1001,7 @@
         fetch("https://hrt-yuri.art/api/cau/hrt_visit_count")
             .then(response => {return response.json()})
             .then(data => {
-                document.getElementById("tv-value").innerHTML = `${data.visits} TOTAL<br>VISITS !!!`
+                document.getElementById("tv-value").innerHTML = `${num_readable(data.visits)} TOTAL<br>VISITS !!!`
                 if(online_url.exec(window.location)) fetch("https://hrt-yuri.art/api/cau/visit_hrt", {method: "POST"})
         })
     };
