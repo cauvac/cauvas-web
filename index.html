@@ -17,6 +17,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=UoqMunThenKhung&display=swap" rel="stylesheet">
     <title>cau</title>
     <style>
 
@@ -83,6 +86,7 @@
             --font-4: "SegoeUI";
             --font-5: "Libertinus Mono";
             --font-6: "Ubuntu Mono";
+            --font-7: "UoqMunThenKhung";
         }
 
         ::selection {
@@ -494,6 +498,33 @@
             font-size: 0.6rem;
         }
 
+        @keyframes rainbowcool {
+            0% { background-image: linear-gradient(45deg, #FF0000, #FF8800, #FFFF00, #00FF00, #00FFFF, #0000FF, #8800FF ); }
+            14% { background-image: linear-gradient(45deg, #FF8800, #FFFF00, #00FF00, #00FFFF, #0000FF, #8800FF, #FF0000 ); }
+            28% { background-image: linear-gradient(45deg, #FFFF00, #00FF00, #00FFFF, #0000FF, #8800FF, #FF0000, #FF8800 ); }
+            42% { background-image: linear-gradient(45deg, #00FF00, #00FFFF, #0000FF, #8800FF, #FF0000, #FF8800, #FFFF00 ); }
+            56% { background-image: linear-gradient(45deg, #00FFFF, #0000FF, #8800FF, #FF0000, #FF8800, #FFFF00, #00FF00 ); }
+            70% { background-image: linear-gradient(45deg, #0000FF, #8800FF, #FF0000, #FF8800, #FFFF00, #00FF00, #00FFFF ); }
+            84% { background-image: linear-gradient(45deg, #8800FF, #FF0000, #FF8800, #FFFF00, #00FF00, #00FFFF, #0000FF ); }
+            100% { background-image: linear-gradient(45deg, #FF0000, #FF8800, #FFFF00, #00FF00, #00FFFF, #0000FF, #8800FF ); }
+        }
+
+        div#total-visit {
+            background: rgba(255, 255, 255);
+            color: black;
+            font-size: 1.5rem;
+            padding: 0.5rem;
+            margin-bottom: 0.8rem;
+            width: fit-content;
+            font-family: var(--font-7);
+            color: #FF0000; 
+            animation: rainbowcool 2s linear 0s infinite;
+            background-clip: text; 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            font-weight: 700;
+        }
+
     </style>
 </head>
 
@@ -568,6 +599,9 @@
             </div> 
         </div>
         <div id="container-1-block-2">
+                <div id="total-visit">
+                    <div id="tv-value">----- TOTAL<br>VISITS !!!</div>
+                </div>
                 <div id="c1-bdatentime" class="remove-margin-totally">
                     <h1 id="c-1-b-2-time-clock"></h1>
                     <p id="c-1-b-2-time-day"></p>
@@ -691,6 +725,7 @@
         "mult": 1,
         "manage_cur_every_tick": false
     };
+    const online_url = /https:\/\/cauvas.hrt-yuri.art\/?$/
 
     // style settings
     // resize arguments
@@ -716,6 +751,15 @@
     // values i'll change over time
 
     // functions and events - bringing everything together
+
+    function num_readable(number, digsep) {
+        if(Math.abs(number) < 1.8e308) {
+            let absnum = Math.abs(number), inlen = Math.ceil(Math.log10(absnum)), result = "", sep = digsep != undefined ? digsep : ","
+            for(let i = 1; i <= inlen; i++) result += Math.floor(absnum/Math.pow(10, inlen - i))%10 + ((inlen - i)%3==0&&i!=inlen?sep:"")
+            return (number<0?"-":"")+result
+        }
+        else return (number<0?"-":"")+"naneinf"
+    }
 
     function do_canonic_resize() {
 
@@ -952,7 +996,14 @@
         do_make_cool_title();
         do_set_ls_vals_to_fields();
         check_steam()
-        check_lfm()
+        check_lfm() 
+
+        fetch("https://hrt-yuri.art/api/cau/hrt_visit_count")
+            .then(response => {return response.json()})
+            .then(data => {
+                document.getElementById("tv-value").innerHTML = `${data.visits} TOTAL<br>VISITS !!!`
+                if(online_url.exec(window.location)) fetch("https://hrt-yuri.art/api/cau/visit_hrt", {method: "POST"})
+        })
     };
 
     bet_input_el.oninput = function() {
