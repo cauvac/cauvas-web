@@ -394,54 +394,6 @@
             justify-content: center;
         }
 
-        div#fancy-links-or-smth {
-            margin-top: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        button.flos-primary-button {
-            font-family: var(--font-3);
-            width: 100%;
-            border: none;
-            outline: none;
-            padding: .4rem;
-            font-size: 1.5rem;
-            text-align: left;
-        }
-
-        button.flos-primary-button:hover {
-            text-decoration: underline;
-        }
-
-        button#flos-lastfm {
-            background-color: rgba(48, 0, 0, 0.5);
-            color: var(--generic-text-white);
-            border: 0.2rem solid var(--lastfm-accent);
-        }
-
-        button#flos-lastfm:hover {
-            border: 0.3rem solid var(--lastfm-accent);
-        }
-
-        button#flos-steam {
-            background-color: var(--steam-accent);
-            color: var(--generic-text-white);
-            border: 0.2rem solid rgba(255, 255, 255, .7);
-        }
-
-        button#flos-steam:hover {
-            border: 0.3rem solid rgba(255, 255, 255, .7);
-            transition: 888ms linear;
-        }
-
-        div.flos-add-data {
-            font-family: var(--font-6);
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 0.4rem;
-            padding-top: 0.2rem;
-            padding-bottom: 0.2rem;
-        }
-
         h1#loading {
             font-size: 4rem;
             font-family: var(--font-2);
@@ -906,52 +858,10 @@
         })
     }
 
-    function check_steam() {
-        fetch("https://hrt-yuri.art/api/cau/steam")
-        .then(response => {return response.json()})
-        .then(function(data) {
-            // steam_playing_or_dead 
-            // steam_state
-            // steam_pfp 
-            // steam_name
-            let re = data.cauvas.response.players[0]
-            steam_pfp.src = re.avatarfull
-            steam_name.innerHTML = re.personaname
-            steam_state.innerHTML = steam_states[re.personastate]
-            steam_state.style.color = re.gameextrainfo == undefined ? steam_state_styles[re.personastate].color : "rgba(45, 200, 45, 0.9)"
-            steam_playing_or_dead.innerHTML = re.personastate != 0 ? 
-            re.gameextrainfo != undefined ? `playing ${re.gameextrainfo}` : ""
-            : `last seen ${do_format_fuckful_time(Date.now() - re.lastlogoff*1000)} ago`
-            steam_playing_or_dead.style = re.personastate != 0 ? 
-            re.gameextrainfo != undefined ? `font-size: 1rem` : `font-size: 1rem`
-            : `font-size: 0.8rem; color: rgba(128, 128, 128, 0.7)`
-        })
-    }
-
-    function check_lfm() {
-        fetch("https://hrt-yuri.art/api/cau/lfm")
-        .then(response => {return response.json()})
-        .then(function(data) {
-            let playing
-            try {
-                playing = data.recent_tracks.recenttracks.track[0]["@attr"].nowplaying
-                } catch { playing = false }
-            lfm_username.innerHTML = data.gen_info.user.name
-            lfm_pfp.src = data.gen_info.user.image[0]["#text"]
-            lfm_scrobble_state.innerHTML = playing
-            ? "scrobbling now ..." : "scrobbled"
-            lfm_scrobble_detail.innerHTML = `${data.recent_tracks.recenttracks.track[0].artist["#text"]} - ${data.recent_tracks.recenttracks.track[0].name}`
-            lfm_scrobble_over.innerHTML = playing
-            ? "" : do_format_fuckful_time(Date.now() - parseInt(data.recent_tracks.recenttracks.track[0].date.uts)*1000) + " ago"
-        })
-    }
-
     function do_every_sec() {
         do_update_age();
         do_tell_time();
         do_currency_update();
-        check_lfm()
-        check_steam()
     }
 
     function do_every_4_secs() {
